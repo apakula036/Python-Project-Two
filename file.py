@@ -29,10 +29,9 @@ while True:
     if userGuess == randomNum:
         print("Corret!")
         break
+    elif userGuess > randomNum:
+        print("You were above the number.")
     else:
-        if userGuess > randomNum:
-            print("You were above the number.")
-        else:
-            print("You were below the number.")
+        print("You were below the number.")
 
 print("You guessed" , guesses , "times. ")

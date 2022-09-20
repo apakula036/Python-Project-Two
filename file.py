@@ -2,7 +2,7 @@
 import random
 
 
-answer = input("Type a number: ")
+answer = input("Type a range to guess between: ")
 
 if answer.isdigit():
     answer = int(answer)
@@ -13,6 +13,26 @@ else:
     print("Please type a number.")
     quit()
 
-randomNum = random.randrange(-1, 10)
-
+randomNum = random.randrange(0, answer)
+guesses = 0
 print(randomNum)
+
+while True:
+    guesses += 1
+    userGuess = input("Guess the random number: ")
+    if userGuess.isdigit():
+        userGuess = int(userGuess)
+    else:
+        print("Please type a number.")
+        continue
+
+    if userGuess == randomNum:
+        print("Corret!")
+        break
+    else:
+        if userGuess > randomNum:
+            print("You were above the number.")
+        else:
+            print("You were below the number.")
+
+print("You guessed" , guesses , "times. ")
